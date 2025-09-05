@@ -1,0 +1,27 @@
+2025-09-06 01:27:34  QUESTION: What is the data for Colombo from the last 7 days?  SQL: SELECT 
+    "datetime",
+    "tempmax",
+    "tempmin",
+    "temp",
+    "humidity",
+    "rain",
+    "rainsum",
+    "snow",
+    "snowdepth",
+    "windgust",
+    "windspeed",
+    "winddir",
+    "sealevelpressure",
+    "cloudcover",
+    "visibility",
+    "solarradiation",
+    "solarenergy",
+    "uvindex"
+FROM 
+    weather_data
+WHERE 
+    "statedistrict" = 'Colombo'
+    AND "datetime" >= CURRENT_DATE - INTERVAL '7 day'
+ORDER BY 
+    "datetime" DESC
+LIMIT 5
